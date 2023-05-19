@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "logs" {
 
 resource "aws_s3_bucket_ownership_controls" "logs" {
   depends_on = [aws_s3_bucket_policy.logs]
-  bucket = aws_s3_bucket.logs.id
+  bucket     = aws_s3_bucket.logs.id
   rule {
     object_ownership = "ObjectWriter"
   }
