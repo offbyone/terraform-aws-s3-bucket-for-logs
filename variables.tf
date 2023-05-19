@@ -32,10 +32,6 @@ variable "bucket" {
   description = "Bucket name."
   type        = string
 
-  validation {
-    condition     = can(regex("^([a-z0-9]{1}[a-z0-9-]{1,61}[a-z0-9]{1})$", var.bucket))
-    error_message = "Invalid bucket name, please check https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html for more details."
-  }
 }
 variable "force_destroy" {
   description = "Allow remove the bucket with its content."
