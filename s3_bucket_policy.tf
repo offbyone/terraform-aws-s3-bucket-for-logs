@@ -69,6 +69,7 @@ data "aws_iam_policy_document" "external_readers" {
     actions = [
       "s3:Get*"
     ]
+    resources = ["arn:aws:s3:::${local.bucket}/${var.cdn_logs_path}/*"]
   }
 }
 
