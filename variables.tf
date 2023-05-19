@@ -31,7 +31,10 @@ variable "s3_logs_path" {
 variable "bucket" {
   description = "Bucket name."
   type        = string
-
+}
+variable "tags" {
+  description = "Optional upstream tags"
+  type = map
 }
 variable "force_destroy" {
   description = "Allow remove the bucket with its content."

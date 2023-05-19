@@ -9,8 +9,9 @@ locals {
   server_side_encryption_configuration_bucket_key_enabled           = var.server_side_encryption_configuration_bucket_key_enabled
   server_side_encryption_configuration_bucket_key_sse_algorithm     = var.server_side_encryption_configuration_bucket_key_sse_algorithm
   server_side_encryption_configuration_bucket_key_kms_master_key_id = var.server_side_encryption_configuration_bucket_key_kms_master_key_id
-  tags = {
+  module_tags = {
     Module       = "S3 Bucket for Logs"
-    ModuleSource = "https://github.com/jetbrains-infra/terraform-aws-s3-bucket-for-logs/"
+    ModuleSource = "https://github.com/offbyone/terraform-aws-s3-bucket-for-logs/"
   }
+  tags = merge(local.module_tags, var.tags)
 }
